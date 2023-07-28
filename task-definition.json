@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-west-1:408567971819:task-definition/xashy-webapp-TD:2",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:408567971819:task-definition/eposi-webapp-TD:3",
     "containerDefinitions": [
         {
             "name": "xashy-webapp",
@@ -24,17 +24,18 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/xashy-webapp-TD",
-                    "awslogs-region": "us-west-1",
+                    "awslogs-group": "/ecs/",
+                    "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
-                }
+                },
+                "secretOptions": []
             }
         }
     ],
-    "family": "xashy-webapp-TD",
-    "executionRoleArn": "arn:aws:iam::408567971819:role/ecsTaskExecutionRole",
+    "family": "eposi-webapp-TD",
+    "executionRoleArn": "arn:aws:iam::408567971819:role/daunty",
     "networkMode": "awsvpc",
-    "revision": 2,
+    "revision": 3,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -71,7 +72,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-07-08T02:35:48.597Z",
-    "registeredBy": "arn:aws:iam::408567971819:user/Xashy",
+    "registeredAt": "2023-07-28T14:47:56.028Z",
+    "registeredBy": "arn:aws:iam::408567971819:root",
     "tags": []
 }
