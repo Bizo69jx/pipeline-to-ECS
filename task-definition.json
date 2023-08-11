@@ -1,13 +1,13 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:408567971819:task-definition/eposi-webapp-TD:3",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:408567971819:task-definition/eposi-TD:2",
     "containerDefinitions": [
         {
-            "name": "xashy-webapp",
+            "name": "eposi",
             "image": "jakuma998/xashy-webapp:v1",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "xashy-webapp-8080-tcp",
+                    "name": "eposi-8080-tcp",
                     "containerPort": 8080,
                     "hostPort": 8080,
                     "protocol": "tcp",
@@ -32,10 +32,11 @@
             }
         }
     ],
-    "family": "eposi-webapp-TD",
-    "executionRoleArn": "arn:aws:iam::408567971819:role/daunty",
+    "family": "eposi-TD",
+    "taskRoleArn": "arn:aws:iam::408567971819:role/daunty",
+    "executionRoleArn": "arn:aws:iam::408567971819:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 3,
+    "revision": 2,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -47,6 +48,9 @@
         },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
         },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
@@ -72,7 +76,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-07-28T14:47:56.028Z",
+    "registeredAt": "2023-08-11T20:25:00.226Z",
     "registeredBy": "arn:aws:iam::408567971819:root",
     "tags": []
 }
